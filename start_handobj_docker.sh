@@ -1,0 +1,3 @@
+# docker run --gpus all -it --runtime=nvidia -v /local/home/rsaxena/Documents/Github/Master-Thesis-Project:/home/rupal/Master-Thesis-Project -v /local/home/rsaxena/Documents/Github/DATASET:/home/rupal/DATASET  handobj_docker /bin/bash
+docker run -it -v /local/home/rsaxena/Documents/Github/Master-Thesis-Project:/home/rupal/Master-Thesis-Project -v /local/home/rsaxena/Documents/Github/DATASET:/home/rupal/DATASET  handobj_docker /bin/bash
+# TODO: make sure i can run it on gpu if succesfull
