@@ -19,6 +19,8 @@ RUN pip install --no-cache-dir \
     torchaudio==0.12.1 \
     -f https://download.pytorch.org/whl/cu113/torch_stable.html
 
+RUN pip install torch_geometric
+
 # Set the working directory
 WORKDIR /workspace
 COPY . .
