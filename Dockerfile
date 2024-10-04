@@ -19,16 +19,24 @@ RUN pip install --no-cache-dir \
     torchaudio==0.12.1 \
     -f https://download.pytorch.org/whl/cu113/torch_stable.html
 
-RUN pip install torch_geometric
+# Set the working directory
+WORKDIR /workspace
+
+# Copy all necessary folders to /workspace in the container
+COPY . .
+
+# Change directory to install projectaria_tools
+WORKDIR /workspace/projectaria_tools
+RUN python3 -m pip install projectaria-tools'[all]'
 
 # Set the working directory
 WORKDIR /workspace
-COPY . .
 RUN pip install -r requirements.txt
+
 WORKDIR /workspace/lib
 RUN python setup.py build develop
+
+RUN pip install torch_geometric
 WORKDIR /workspace
 # Default command
 CMD ["python3"]
-
-
