@@ -37,6 +37,7 @@ WORKDIR /workspace/lib
 RUN python setup.py build develop
 
 RUN pip install torch_geometric
+RUN pip install openai==0.28
 WORKDIR /workspace
 # Default command
 CMD ["python3"]
