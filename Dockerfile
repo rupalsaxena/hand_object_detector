@@ -10,6 +10,7 @@ RUN apt-get update && \
     libgl1-mesa-glx \
     libglib2.0-0 \
     build-essential \
+    git \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PyTorch, torchvision, torchaudio with cudatoolkit 11.3
@@ -38,6 +39,9 @@ RUN python setup.py build develop
 
 RUN pip install torch_geometric
 RUN pip install openai==0.28
+
+RUN pip install git+https://github.com/openai/CLIP.git
+
 WORKDIR /workspace
 # Default command
 CMD ["python3"]
