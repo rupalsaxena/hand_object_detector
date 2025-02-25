@@ -133,9 +133,6 @@ def vis_detections_filtered_objects_PIL(im, obj_dets, hand_dets, thresh_hand=0.8
                         side_idx = 1
                     draw_line_point(draw, side_idx, (int(hand_cc[0]), int(hand_cc[1])), (int(obj_cc[0]), int(obj_cc[1])))
 
-
-        
-
     elif hand_dets is not None:
         image = vis_detections_PIL(im, 'hand', hand_dets, thresh_hand, font_path)
         
